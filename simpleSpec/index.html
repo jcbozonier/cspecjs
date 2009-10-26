@@ -24,11 +24,9 @@ when["using the adder with two positive numbers"] = function()
     
     should("add them up to their sum");
 	assertAreEqual(context.number1 + context.number2, context.result);
-    // assertion code
     
     should("create a sum greater than zero");
 	assertGreaterThanZero(context.result);
-    //assertion code
 }
 
 when["using the adder with two negative numbers"] = function()
@@ -43,11 +41,9 @@ when["using the adder with two negative numbers"] = function()
     
     should("add them up to their sum");
 	assertAreEqual(context.number1 + context.number2, context.result);
-    // assertion code
     
     should("create a sum less than zero");
 	assertLessThanZero(context.result);
-    //assertion code
 }
 
 runTests();
