@@ -6,21 +6,47 @@
         <title>New Web Project</title>
 		<script language="JavaScript" src="library.js"></script>
 		<script language="JavaScript">
-			
-when["adding two numbers together"] = function()
+
+var theAdder = function(x, y)
+{
+	return x + y;
+}
+
+when["using the adder with two positive numbers"] = function()
 {
     // context set up
     because = function()
     {
-        this.yada = "ung unf";
+		this.number1 = 1;
+		this.number2 = 2;
+		this.result = theAdder(this.number1, this.number2);
     };
     
-    should("do something");
-	assertNotNull(context["yada"]);
+    should("add them up to their sum");
+	assertAreEqual(context.number1 + context.number2, context.result);
     // assertion code
     
-    should("do something else");
-	assertNotNull(null);
+    should("create a sum greater than zero");
+	assertGreaterThanZero(context.result);
+    //assertion code
+}
+
+when["using the adder with two negative numbers"] = function()
+{
+    // context set up
+    because = function()
+    {
+		this.number1 = -1;
+		this.number2 = -2;
+		this.result = theAdder(this.number1, this.number2);
+    };
+    
+    should("add them up to their sum");
+	assertAreEqual(context.number1 + context.number2, context.result);
+    // assertion code
+    
+    should("create a sum less than zero");
+	assertLessThanZero(context.result);
     //assertion code
 }
 
